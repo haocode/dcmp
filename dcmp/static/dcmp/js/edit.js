@@ -212,9 +212,9 @@ Date.prototype.Format = function (fmt) { //author: meizz
                 '    </div>',
                 '    <div id="task_' + lastest_task_id + '_advanced_settings" class="panel-collapse collapse" style="background: transparent;" role="tabpanel" aria-labelledby="task_' + lastest_task_id + '_advanced_settings_header">',
                 '        <div class="panel-body">',
-                task_to_element_by_field(lastest_task_id, task, "priority_weight", "number", null, null, "Priority weight of this task against other task. This allows the executor to trigger higher priority tasks before others when things get backed up."),
-                task_to_element_by_field(lastest_task_id, task, "retries", "number", null, null, "The number of retries that should be performed before failing the task."),
-                task_to_element_by_field(lastest_task_id, task, "retry_delay_minutes", "number", null, null, "Delay minutes between retries."),
+                task_to_element_by_field(lastest_task_id, task, "priority_weight", "number", null, null, "此任务的优先级与其他任务的优先级。这允许执行器在其他事情得到备份之前，触发更高优先级的任务."),
+                task_to_element_by_field(lastest_task_id, task, "retries", "number", null, null, "在任务失败之前应执行的重试次数."),
+                task_to_element_by_field(lastest_task_id, task, "retry_delay_minutes", "number", null, null, "重试之间延迟分钟."),
                 '        </div>',
                 '    </div>',
                 '</div>',
@@ -393,7 +393,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
                 $(self).siblings(".render-loading").hide();
             },
             error: function(){
-                alert('Failed!');
+                alert('失败!');
                 $(self).siblings(".render-loading").hide();
             }
         });
