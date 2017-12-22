@@ -71,21 +71,21 @@
                 State
             </th>
             <th class="column-header">
-                DAG Config Name
+                DAG配置名称
             </th>
             <th class="column-header">
                 Category
             </th>
             <th class="column-header">
-                Schedule
+                调度时间
             </th>
             <th style="padding-left: 5px;">
-                Recent Tasks
+                最近task运行状态
                 <span id="statuses_info" class="glyphicon glyphicon-info-sign" aria-hidden="true" title="Status of tasks from all active DAG runs or, if not currently active, from most recent run."></span>
                 <img id="recent_tasks_loading" width="15" src="{{ url_for("static", filename="loading.gif") }}">
             </th>
             <th class="column-header">
-                DAG Runs
+                 最近DAG运行状态
                 <span id="statuses_info" class="glyphicon glyphicon-info-sign" aria-hidden="true" title="Status of all previous DAG runs."></span>
                 <img id="dag_runs_loading" width="15" src="{{ url_for("static", filename="loading.gif") }}">
             </th>

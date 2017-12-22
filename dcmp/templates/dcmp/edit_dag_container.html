@@ -5,7 +5,7 @@
             <input class="form-control" id="dag_name" name="dag_name" type="text" value="{{ conf.dag_name }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
     <div class="form-group">
-        <label for="cron" class="col-md-2 control-label">Cron <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Defines how often that DAG runs. Use string as a cron expression or None for exclusively "externally triggered" DAG.'></span> &nbsp;<strong style="color: red">*</strong></label>
+        <label for="cron" class="col-md-2 control-label">计时器 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Defines how often that DAG runs. Use string as a cron expression or None for exclusively "externally triggered" DAG.'></span> &nbsp;<strong style="color: red">*</strong></label>
         <div class="col-md-10 form-field">
             <input class="form-control" id="cron" name="cron" type="text" value="{{ conf.cron }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
@@ -78,12 +78,12 @@
                         <input class="form-control" id="max_active_runs" name="max_active_runs" type="number" min="0" step="1" value="{{ conf.max_active_runs }}" {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="add_start_task" class="col-md-2 control-label">Add Start Task <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a start task as the start of the DAG.'></span> &nbsp;</label>
+                    <label for="add_start_task" class="col-md-2 control-label">增加开始task <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a start task as the start of the DAG.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="add_start_task" name="add_start_task" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.add_start_task %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="add_end_task" class="col-md-2 control-label">Add End Task <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a end task as the end of the DAG.'></span> &nbsp;</label>
+                    <label for="add_end_task" class="col-md-2 control-label">增加结束task <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a end task as the end of the DAG.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="add_end_task" name="add_end_task" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.add_end_task %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
@@ -98,12 +98,12 @@
                         <input class="form-control" id="skip_dag_on_prev_running" name="skip_dag_on_prev_running" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.skip_dag_on_prev_running %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="email_on_skip_dag" class="col-md-2 control-label">Email On Skip DAG <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Send email when the whole DAG has been skipped.'></span> &nbsp;</label>
+                    <label for="email_on_skip_dag" class="col-md-2 control-label">Email On Skip DAG <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='当整个DAG被跳过时发送电子邮件.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="email_on_skip_dag" name="email_on_skip_dag" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.email_on_skip_dag %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="emails" class="col-md-2 control-label">Emails <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Emails split by comma. If this field is blank, default emails are used.'></span> &nbsp;</label>
+                    <label for="emails" class="col-md-2 control-label">Emails <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='用逗号分隔电子邮件地址。 如果此字段为空，使用默认电子邮件地址.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="emails" name="emails" type="text" value="{{ conf.emails }}" {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
