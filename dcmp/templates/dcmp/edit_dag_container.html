@@ -1,6 +1,6 @@
 <div id="dag-container">
     <div class="form-group">
-        <label for="dag_name" class="col-md-2 control-label">DAG Name &nbsp;<strong style="color: red">*</strong></label>
+        <label for="dag_name" class="col-md-2 control-label">DAG名称 &nbsp;<strong style="color: red">*</strong></label>
         <div class="col-md-10 form-field">
             <input class="form-control" id="dag_name" name="dag_name" type="text" value="{{ conf.dag_name }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
@@ -10,7 +10,7 @@
             <input class="form-control" id="cron" name="cron" type="text" value="{{ conf.cron }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
     <div class="form-group">
-        <label for="category" class="col-md-2 control-label">Category &nbsp;<strong style="color: red">*</strong></label>
+        <label for="category" class="col-md-2 control-label">类别 &nbsp;<strong style="color: red">*</strong></label>
         <div class="col-md-10 form-field">
             <span name="category" class="btn-group btn-group-input btn-group-input-single">
             {% for category in DAG_CREATION_MANAGER_CATEGORYS %}
@@ -20,45 +20,45 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="retries" class="col-md-2 control-label">Retries <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='The number of retries that should be performed before failing the task.'></span> &nbsp;</label>
+        <label for="retries" class="col-md-2 control-label">重跑次数 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='The number of retries that should be performed before failing the task.'></span> &nbsp;</label>
         <div class="col-md-10 form-field">
             <input class="form-control" id="retries" name="retries" type="number" min="0" step="1" value="{{ conf.retries }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
     <div class="panel panel-default advanced-settings-collapse">
         <div class="panel-heading" role="tab" id="dag_advanced_settings_header">
             <h4 class="panel-title">
-                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#dag_advanced_settings" aria-expanded="false" aria-controls="dag_advanced_settings">Advanced Settings</a>
+                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#dag_advanced_settings" aria-expanded="false" aria-controls="dag_advanced_settings">高级设置</a>
                 <span class="advanced-settings-tool-bar">
-                    <a href="javascript:void(0)" class="advanced-settings-expand-all advanced-settings-tool">Expand All</a>
+                    <a href="javascript:void(0)" class="advanced-settings-expand-all advanced-settings-tool">全部展开</a>
                     <span class="advanced-settings-tool">/</span>
-                    <a href="javascript:void(0)" class="advanced-settings-collapse-all advanced-settings-tool" style="margin-right: 20px;">Collapse All</a>
+                    <a href="javascript:void(0)" class="advanced-settings-collapse-all advanced-settings-tool" style="margin-right: 20px;">折叠</a>
                 </span>
             </h4>
         </div>
         <div id="dag_advanced_settings" class="panel-collapse collapse" style="background: transparent;" role="tabpanel" aria-labelledby="dag_advanced_settings_header">
             <div class="panel-body">
                 <div class="form-group">
-                    <label for="retry_delay_minutes" class="col-md-2 control-label long-label">Retry Delay Minutes <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Delay minutes between retries.'></span> &nbsp;</label>
+                    <label for="retry_delay_minutes" class="col-md-2 control-label long-label">重跑间隔分钟数 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Delay minutes between retries.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="retry_delay_minutes" name="retry_delay_minutes" type="number" min="0" step="1" value="{{ conf.retry_delay_minutes }}" {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="start_date" class="col-md-2 control-label long-label">Start Date <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='If this field is blank, it will be auto set.'></span> &nbsp;</label>
+                    <label for="start_date" class="col-md-2 control-label long-label">开始运行时间 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='If this field is blank, it will be auto set.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" data-date-format='YYYY-MM-DD HH:mm:ss' data-role="datetimepicker" id="start_date" name="start_date" value="{{ conf.start_date }}"  {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="end_date" class="col-md-2 control-label long-label">End Date <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='if specified, the scheduler will not go beyond this date.'></span> &nbsp;</label>
+                    <label for="end_date" class="col-md-2 control-label long-label">结束运行时间 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='if specified, the scheduler will not go beyond this date.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" data-date-format='YYYY-MM-DD HH:mm:ss' data-role="datetimepicker" id="end_date" name="end_date" value="{{ conf.end_date }}"  {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="email_on_failure" class="col-md-2 control-label">Email On Failure &nbsp;</label>
+                    <label for="email_on_failure" class="col-md-2 control-label">失败发送邮件 &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="email_on_failure" name="email_on_failure" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.email_on_failure %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="email_on_retry" class="col-md-2 control-label">Email On Retry &nbsp;</label>
+                    <label for="email_on_retry" class="col-md-2 control-label">重跑发送邮件 &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="email_on_retry" name="email_on_retry" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.email_on_retry %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
@@ -68,7 +68,7 @@
                         <input class="form-control" id="depends_on_past" name="depends_on_past" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.depends_on_past %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="concurrency" class="col-md-2 control-label">Concurrency &nbsp;</label>
+                    <label for="concurrency" class="col-md-2 control-label">并行度 &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="concurrency" name="concurrency" type="number" min="0" step="1" value="{{ conf.concurrency }}" {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
