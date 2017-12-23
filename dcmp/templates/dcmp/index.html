@@ -54,9 +54,9 @@
 </ul>
 <form id="filter_form" method="GET" action="">
     <div class="pull-right">
-        <button type="submit" class="btn btn-primary" style="display: none">Apply</button>
+        <button type="submit" class="btn btn-primary" style="display: none">应用</button>
         {% if active_filters %}
-        <a href="?" class="btn btn-default">Reset Filters</a>
+        <a href="?" class="btn btn-default">重置过滤器</a>
         {% endif %}
     </div>
 
@@ -99,23 +99,23 @@
     {% for dcmp_dag in dcmp_dags %}
     <tr>
         <td class="list-buttons-column">
-            <a class="icon link-tooltip" href="graph?dag_name={{ dcmp_dag.conf.dag_name }}" title="Edit">
+            <a class="icon link-tooltip" href="graph?dag_name={{ dcmp_dag.conf.dag_name }}" title="编辑">
               <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
             </a>
-            <a class="icon link-tooltip" href="details?dag_name={{ dcmp_dag.conf.dag_name }}" title="Details">
+            <a class="icon link-tooltip" href="details?dag_name={{ dcmp_dag.conf.dag_name }}" title="详情">
               <span class="fa fa-pencil glyphicon glyphicon-list" data-original-title="" title=""></span>
             </a>
-            <a class="icon link-tooltip" href="compare?dag_name={{ dcmp_dag.dag_name }}&version1={{ dcmp_dag.version }}&version2={{ dcmp_dag.version }}" title="Compare">
+            <a class="icon link-tooltip" href="compare?dag_name={{ dcmp_dag.dag_name }}&version1={{ dcmp_dag.version }}&version2={{ dcmp_dag.version }}" title="对比">
               <span class="fa fa-pencil glyphicon glyphicon-duplicate" data-original-title="" title=""></span>
             </a>
             {% if can_access_approver %}
                 <form class="icon" action="javascript:void(0)">
-                    <button class="delete-btn link-tooltip" dagname="{{ dcmp_dag.conf.dag_name }}" title="Delete">
+                    <button class="delete-btn link-tooltip" dagname="{{ dcmp_dag.conf.dag_name }}" title="删除">
                         <span class="fa fa-trash glyphicon glyphicon-trash"></span>
                     </button>
                 </form>
                 {% if not dcmp_dag.editing and dcmp_dag.version != dcmp_dag.approved_version %}
-                    <a class="icon link-tooltip" href="approve?dag_name={{ dcmp_dag.conf.dag_name }}" title="Approve">
+                    <a class="icon link-tooltip" href="approve?dag_name={{ dcmp_dag.conf.dag_name }}" title="批准">
                       <span class="fa fa-pencil glyphicon glyphicon-plane" data-original-title="" title=""></span>
                     </a>
                 {% endif %}
@@ -123,11 +123,11 @@
         </td>
         <td>
             {% if dcmp_dag.editing %}
-                <span class="label" style="background-color:lime;" title="{{ dcmp_dag.editing_user_name }}{{ dcmp_dag.editing_start.strftime(' %Y-%m-%d %H:%M') if dcmp_dag.editing_start else '' }}">editing</span>
+                <span class="label" style="background-color:lime;" title="{{ dcmp_dag.editing_user_name }}{{ dcmp_dag.editing_start.strftime(' %Y-%m-%d %H:%M') if dcmp_dag.editing_start else '' }}">编辑</span>
             {% elif dcmp_dag.version != dcmp_dag.approved_version %}
                 {% if can_access_approver %}<a href="approve?dag_name={{ dcmp_dag.conf.dag_name }}" style="text-decoration: none;">{% endif %}<span class="label" style="background-color:gold;" title="{{ dcmp_dag.last_editor_user_name }}{{ dcmp_dag.last_edited_at.strftime(' %Y-%m-%d %H:%M') if dcmp_dag.last_edited_at else '' }}">need approve</span>{% if can_access_approver %}</a>{% endif %}
             {% else %}
-                <span class="label" style="background-color:green;" title="{{ dcmp_dag.approver_user_name }}{{ dcmp_dag.last_approved_at.strftime(' %Y-%m-%d %H:%M') if dcmp_dag.last_approved_at else '' }}">published</span>
+                <span class="label" style="background-color:green;" title="{{ dcmp_dag.approver_user_name }}{{ dcmp_dag.last_approved_at.strftime(' %Y-%m-%d %H:%M') if dcmp_dag.last_approved_at else '' }}">发布</span>
             {% endif %}
         </td>
         <td><a href="graph?dag_name={{ dcmp_dag.conf.dag_name }}&readonly=True" class="dag-name" dagname="{{ dcmp_dag.conf.dag_name }}">{{ dcmp_dag.conf.dag_name }}</a> <img class="loading" style="display: none;" width="15" src="{{ url_for("static", filename="loading.gif") }}"></td>
@@ -144,7 +144,7 @@
         <td>
             {% for search_result in dcmp_dag.search_results %}
                 <div {% if not loop.last %}style="margin-bottom: 5px;"{% endif %}>
-                    <a class="link-tooltip" href="details?dag_name={{ dcmp_dag.conf.dag_name }}&highlight={{ search }}#{{ search_result['full_key'] }}" title="View Record">
+                    <a class="link-tooltip" href="details?dag_name={{ dcmp_dag.conf.dag_name }}&highlight={{ search }}#{{ search_result['full_key'] }}" title="查看记录">
                       <span class="fa fa-pencil glyphicon glyphicon-search" data-original-title="" title=""></span>
                     </a>
                     {{ search_result["html_line"]|safe }}

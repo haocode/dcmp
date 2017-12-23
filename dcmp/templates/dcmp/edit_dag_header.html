@@ -11,11 +11,11 @@
 </h2>
 <ul class="nav nav-tabs">
     <li>
-        <a href="list">List</a></li>
+        <a href="list">目录</a></li>
     <li>
         <a href="?">创建</a></li>
     <li {% if graph %}class="active"{% endif %}>
-        <a href="graph?dag_name={{ dcmp_dag.dag_name }}&readonly={{ 'readonly' if readonly else '' }}"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Graph</a></li>
+        <a href="graph?dag_name={{ dcmp_dag.dag_name }}&readonly={{ 'readonly' if readonly else '' }}"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> 图形</a></li>
     <li {% if not graph and not raw and not details and not compare and not approve %}class="active"{% endif %}>
         <a href="edit?dag_name={{ dcmp_dag.dag_name }}&readonly={{ 'readonly' if readonly else '' }}"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 任务</a></li>
     <li {% if raw %}class="active"{% endif %}>
