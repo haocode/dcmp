@@ -141,8 +141,8 @@ Date.prototype.Format = function (fmt) { //author: meizz
             field_html.push('</div>');
             
             field_html.push('<div>');
-            field_html.push('<a href="javascript:void(0)" class="btn btn-primary render-btn" role="button">Render</a>')
-            field_html.push('<a href="javascript:void(0)" class="btn btn-default render-dry-run-btn" role="button">Render and Dry Run</a>')
+            field_html.push('<a href="javascript:void(0)" class="btn btn-primary render-btn" role="button">渲染</a>')
+            field_html.push('<a href="javascript:void(0)" class="btn btn-default render-dry-run-btn" role="button">渲染和演习</a>')
             field_html.push('<img class="render-loading" style="width: 25px; display: none; margin-left: 10px;" src="' + loading_img_url + '">')
             field_html.push('<div class="render-result">');
             field_html.push('</div>');
