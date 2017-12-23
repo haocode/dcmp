@@ -1,7 +1,7 @@
 {% extends "dcmp/edit.html" %}
 {% set graph = True %}
 
-{% block title %}DAG Config Graph - {{ conf.dag_name }}{% endblock %}
+{% block title %}DAG配置图 - {{ conf.dag_name }}{% endblock %}
 
 {% block head %}
     {{ super() }}
@@ -26,7 +26,7 @@
                 </div>
             {% endfor %}
             <div class="form-group" style="float: right;">
-                <label for="wide-screen" class="control-label">Widescreen&nbsp;</label>
+                <label for="wide-screen" class="control-label">宽屏&nbsp;</label>
                 <input id="wide-screen" type="checkbox" data-toggle="toggle" data-size="mini">
             </div>
         </div>
@@ -39,17 +39,17 @@
             </div>
             <div class="input-group" style="bottom: 15px; right: 15px; position: absolute;">
                 <button class="btn btn-default" id="view_streams" style="margin-right: 15px;">
-                    <span aria-hidden="true">View Streams</span>
+                    <span aria-hidden="true">流视图</span>
                 </button>
                 {% if not readonly %}
                 <button class="btn btn-primary" id="change_upstreams" style="margin-right: 15px;">
-                    <span aria-hidden="true">Change Upstreams</span>
+                    <span aria-hidden="true">修改上游依赖</span>
                 </button>
                 <button class="btn btn-primary" id="add_task" style="margin-right: 15px;">
-                    <span aria-hidden="true">Add Task</span>
+                    <span aria-hidden="true">增加task</span>
                 </button>
                 <a href="javascript:void(0)" class="btn btn-danger" id="remove_task">
-                    <span aria-hidden="true">Remove Task</span>
+                    <span aria-hidden="true">移除Task</span>
                 </a>
                 {% endif %}
             </div>
