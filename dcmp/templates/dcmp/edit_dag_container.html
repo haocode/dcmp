@@ -98,7 +98,7 @@
                         <input class="form-control" id="skip_dag_on_prev_running" name="skip_dag_on_prev_running" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.skip_dag_on_prev_running %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="email_on_skip_dag" class="col-md-2 control-label">Email On Skip DAG <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='当整个DAG被跳过时发送电子邮件.'></span> &nbsp;</label>
+                    <label for="email_on_skip_dag" class="col-md-2 control-label">当DAG没有执行时发送Email <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='当整个DAG被跳过时发送电子邮件.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="email_on_skip_dag" name="email_on_skip_dag" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.email_on_skip_dag %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
