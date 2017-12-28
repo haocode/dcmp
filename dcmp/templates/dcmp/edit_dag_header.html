@@ -24,11 +24,11 @@
         <a href="details?dag_name={{ dcmp_dag.dag_name }}"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 详情</a></li>
     {% if dcmp_dag.dag_name %}
     <li {% if compare %}class="active"{% endif %}>
-        <a href="compare?dag_name={{ dcmp_dag.dag_name }}&version1={{ dcmp_dag.version }}&version2={{ dcmp_dag.version }}"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> Compare</a></li>
+        <a href="compare?dag_name={{ dcmp_dag.dag_name }}&version1={{ dcmp_dag.version }}&version2={{ dcmp_dag.version }}"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> 对比</a></li>
     {% endif %}
     {% if can_access_approver and dcmp_dag.dag_name and dcmp_dag.version != dcmp_dag.approved_version %}
     <li {% if approve %}class="active"{% endif %}>
-        <a href="approve?dag_name={{ dcmp_dag.dag_name }}"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Approve</a></li>
+        <a href="approve?dag_name={{ dcmp_dag.dag_name }}"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 批准</a></li>
     {% endif %}
     {% if not details and not compare and not approve %}
         {% if dcmp_dag_confs %}
