@@ -86,9 +86,9 @@ _["%%(task_name)s"].category = {
         "before_code": "",
         # "operator_name": "HiveOperator",
         "operator_name": "HiveServer2Operator",
+    ## mapred_job_name="%(task_name)s",
+    ## mapred_queue=%(mapred_queue_code)s,
         "operator_code": r"""
-    mapred_job_name="%(task_name)s",
-    mapred_queue=%(mapred_queue_code)s,
     hql=r'''
 %(processed_command)s
 '''.decode("utf-8"),
