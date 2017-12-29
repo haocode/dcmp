@@ -27,7 +27,7 @@ sys.setdefaultencoding('utf-8')
 sys.path.append(path.dirname(path.abspath(__file__)))
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
-from utils import send_email, basic_util, env_conf
+
 
 
 def send_alert_email(mark, context):
