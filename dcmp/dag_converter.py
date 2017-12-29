@@ -84,7 +84,8 @@ _["%%(task_name)s"].category = {
 
     HQL_TASK_CODE_TEMPLATE = BASE_TASK_CODE_TEMPLATE % {
         "before_code": "",
-        "operator_name": "HiveOperator",
+        # "operator_name": "HiveOperator",
+        "operator_name": "HiveServer2Operator",
         "operator_code": r"""
     mapred_job_name="%(task_name)s",
     mapred_queue=%(mapred_queue_code)s,
