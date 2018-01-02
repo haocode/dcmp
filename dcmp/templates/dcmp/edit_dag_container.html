@@ -9,19 +9,19 @@
 {#        <div class="col-md-10 form-field">#}
 {#            <input class="form-control" id="cron" name="cron" type="text" value="{{ conf.cron }}" {% if readonly %}readonly="readonly"{% endif %}></div> <br/>#}
     <div class="row">
-		<div class="col-md-2">Minute</div>
-		<div class="col-md-2">Hour</div>
-		<div class="col-md-2">Day</div>
-		<div class="col-md-2">Month</div>
-		<div class="col-md-2">Week</div>
+		<div class="col-md-1">Minute</div>
+		<div class="col-md-1">Hour</div>
+		<div class="col-md-1">Day</div>
+		<div class="col-md-1">Month</div>
+		<div class="col-md-1">Week</div>
 	</div>
 	<div class="row">
-		<div class="col-md-2"><input type="text" class="form-control" id="job-minute" value="*" onclick="this.select();"/></div>
-		<div class="col-md-2"><input type="text" class="form-control" id="job-hour" value="*" onclick="this.select();"/></div>
-		<div class="col-md-2"><input type="text" class="form-control" id="job-day" value="*" onclick="this.select();"/></div>
-		<div class="col-md-2"><input type="text" class="form-control" id="job-month" value="*" onclick="this.select();"/></div>
-		<div class="col-md-2"><input type="text" class="form-control" id="job-week" value="*" onclick="this.select();"/></div>
-		<div class="col-md-2"><a class="btn btn-primary" onclick="set_schedule();">Set</a></div>
+		<div class="col-md-1"><input type="text" class="form-control" id="job-minute" value="*" onclick="this.select();"/></div>
+		<div class="col-md-1"><input type="text" class="form-control" id="job-hour" value="*" onclick="this.select();"/></div>
+		<div class="col-md-1"><input type="text" class="form-control" id="job-day" value="*" onclick="this.select();"/></div>
+		<div class="col-md-1"><input type="text" class="form-control" id="job-month" value="*" onclick="this.select();"/></div>
+		<div class="col-md-1"><input type="text" class="form-control" id="job-week" value="*" onclick="this.select();"/></div>
+		<div class="col-md-1"><a class="btn btn-primary" onclick="set_schedule();">Set</a></div>
 	</div>
     </div>
     <div class="form-group">
