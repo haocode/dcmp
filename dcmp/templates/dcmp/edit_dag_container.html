@@ -5,7 +5,7 @@
             <input class="form-control" id="dag_name" name="dag_name" type="text" value="{{ conf.dag_name }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
     <div class="form-group">
-        <label for="cron" class="col-md-2 control-label">计时器 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Defines how often that DAG runs. Use string as a cron expression or None for exclusively "externally triggered" DAG.'></span> &nbsp;<strong style="color: red">*</strong></label>
+        <label for="cron" class="col-md-2 control-label">定时器 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='定义DAG运行的频率. 使用字符串作为一个cron表达式，或者不设置，使用“externally triggered”DAG.'></span> &nbsp;<strong style="color: red">*</strong></label>
         <div class="col-md-10 form-field">
             <input class="form-control" id="cron" name="cron" type="text" value="{{ conf.cron }}" {% if readonly %}readonly="readonly"{% endif %}></div>
     </div>
