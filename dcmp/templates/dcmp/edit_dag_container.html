@@ -6,24 +6,24 @@
     </div>
     <div class="form-group">
         <label for="cron" class="col-md-2 control-label">定时器 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='定义DAG运行的频率. 使用字符串作为一个cron表达式，或者不设置，使用“externally triggered”DAG.'></span> &nbsp;<strong style="color: red">*</strong></label>
-{#        <div class="col-md-10 form-field">#}
-{#            <input class="form-control" id="cron" name="cron" type="text" value="{{ conf.cron }}" {% if readonly %}readonly="readonly"{% endif %}></div> <br/>#}
-    <div class="row">
-		<div class="col-md-1">Minute</div>
-		<div class="col-md-1">Hour</div>
-		<div class="col-md-1">Day</div>
-		<div class="col-md-1">Month</div>
-		<div class="col-md-1">Week</div>
-	</div>
-	<div class="row">
-        <div class="col-md-2 control-label"><a class="btn btn-primary" onclick="set_schedule();">Set</a></div>
-		<div class="col-md-1"><input type="text" class="form-control" id="job-minute" value="*" onclick="this.select();"/></div>
-		<div class="col-md-1"><input type="text" class="form-control" id="job-hour" value="*" onclick="this.select();"/></div>
-		<div class="col-md-1"><input type="text" class="form-control" id="job-day" value="*" onclick="this.select();"/></div>
-		<div class="col-md-1"><input type="text" class="form-control" id="job-month" value="*" onclick="this.select();"/></div>
-		<div class="col-md-1"><input type="text" class="form-control" id="job-week" value="*" onclick="this.select();"/></div>
+        <div class="col-md-10 form-field">
+            <input class="form-control" id="cron" name="cron" type="text" value="{{ conf.cron }}" {% if readonly %}readonly="readonly"{% endif %}></div> <br/>
+{#    <div class="row">#}
+{#		<div class="col-md-1">分钟</div>#}
+{#		<div class="col-md-1">小时</div>#}
+{#		<div class="col-md-1">天</div>#}
+{#		<div class="col-md-1">月</div>#}
+{#		<div class="col-md-1">周</div>#}
+{#	</div>#}
+{#	<div class="row">#}
+{#        <div class="col-md-2 control-label"><a class="btn btn-primary" onclick="set_schedule();">Set</a></div>#}
+{#		<div class="col-md-1"><input type="text" class="form-control" id="job-minute" value="*" onclick="this.select();"/></div>#}
+{#		<div class="col-md-1"><input type="text" class="form-control" id="job-hour" value="*" onclick="this.select();"/></div>#}
+{#		<div class="col-md-1"><input type="text" class="form-control" id="job-day" value="*" onclick="this.select();"/></div>#}
+{#		<div class="col-md-1"><input type="text" class="form-control" id="job-month" value="*" onclick="this.select();"/></div>#}
+{#		<div class="col-md-1"><input type="text" class="form-control" id="job-week" value="*" onclick="this.select();"/></div>#}
+{#	</div>#}
 
-	</div>
     </div>
     <div class="form-group">
         <label for="category" class="col-md-2 control-label">类别 &nbsp;<strong style="color: red">*</strong></label>
@@ -99,17 +99,17 @@
                         <input class="form-control" id="add_start_task" name="add_start_task" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.add_start_task %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="add_end_task" class="col-md-2 control-label">增加结束task <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a end task as the end of the DAG.'></span> &nbsp;</label>
+                    <label for="add_end_task" class="col-md-2 control-label">增加结束task <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='增加一个任务作为DAG的结束.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="add_end_task" name="add_end_task" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.add_end_task %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="skip_dag_not_latest" class="col-md-2 control-label long-label">Skip DAG Not Latest <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a task at the beginning of the DAG in order to skip the whole DAG Run when the DAG Run is not running during the most recent schedule interval. If the DAG Run is externally triggered, do not skip.'></span> &nbsp;</label>
+                    <label for="skip_dag_not_latest" class="col-md-2 control-label long-label">跳过DAG不是最新的 <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='在DAG的开头添加一个任务，这样当DAG运行在最近的调度时间间隔内没有运行时，就可以跳过整个DAG的运行。如果DAG运行是外部触发的，不要跳过.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="skip_dag_not_latest" name="skip_dag_not_latest" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.skip_dag_not_latest %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="skip_dag_on_prev_running" class="col-md-2 control-label long-label">Skip DAG On Prev Running <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='Add a task at the beginning of the DAG in order to skip the whole DAG Run when previous DAG Run is still running. If the DAG Run is externally triggered, do not skip.'></span> &nbsp;</label>
+                    <label for="skip_dag_on_prev_running" class="col-md-2 control-label long-label">在预运行中跳过DAG <span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='在DAG的开头添加一个任务，以便在以前的DAG运行仍然运行时跳过整个DAG的运行。如果DAG运行是外部触发的，不要跳过.'></span> &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="skip_dag_on_prev_running" name="skip_dag_on_prev_running" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.skip_dag_on_prev_running %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
