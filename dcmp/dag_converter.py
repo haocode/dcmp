@@ -93,7 +93,19 @@ _["%%(task_name)s"].category = {
 %(processed_command)s
 '''.decode("utf-8"),
 """, }
-    
+
+    SPARK_SQL_TASK_CODE_TEMPLATE = BASE_TASK_CODE_TEMPLATE % {
+        "before_code": "",
+        # "operator_name": "HiveOperator",
+        "operator_name": "SparkSqlOperator",
+        ## mapred_job_name="%(task_name)s",
+        ## mapred_queue=%(mapred_queue_code)s,
+        "operator_code": r"""
+        sql=r'''
+    %(processed_command)s
+    '''.decode("utf-8"),
+    """, }
+
     PYTHON_TASK_CODE_TEMPLATE = BASE_TASK_CODE_TEMPLATE % {
         "before_code": """
 def %(task_name)s_worker(ds, **context):
@@ -139,6 +151,7 @@ _["%(task_name)s"] << _["%(upstream_name)s"]
     TASK_TYPE_TO_TEMPLATE = {
         "bash": BASH_TASK_CODE_TEMPLATE,
         "dummy": DUMMY_TASK_CODE_TEMPLATE,
+        "spark_sql": SPARK_SQL_TASK_CODE_TEMPLATE,
         "hql": HQL_TASK_CODE_TEMPLATE,
         "python": PYTHON_TASK_CODE_TEMPLATE,
         "short_circuit": SHORT_CIRCUIT_TASK_CODE_TEMPLATE,
