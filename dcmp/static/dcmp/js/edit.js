@@ -137,13 +137,6 @@ Date.prototype.Format = function (fmt) { //author: meizz
                     field_html.push('<textarea ' + (readonly? ' readonly="readonly" ': '') + ' id="ace_' + task_id + '_' + task_type + '" class="form-control" rows="1" name="command">' + (task_type == task[field_name]? task["command"]: '') + '</textarea>');
                     field_html.push(render_help);
                     field_html.push(get_ace_script(task_type, "sql"));
-                    field_html = ['<span name="exec" class="btn-group btn-group-input btn-group-input-single">'];
-            // for(var i=0; i<task_categorys.length; i++){
-                // var task_category = task_categorys[i][0];
-                field_html.push('<button type="button" class="btn btn-item ' + '" field-value=" value">' + (task_category? task_category.split("_").join(" "): "default") + '</button>');
-            // }
-            field_html.push('</span>');
-            field_html = field_html.join("\n");
                 }else if(["python", "short_circuit"].indexOf(task_type) != -1){
                     field_html.push('<textarea ' + (readonly? ' readonly="readonly" ': '') + ' id="ace_' + task_id + '_' + task_type + '" class="form-control" rows="1" name="command">' + (task_type == task[field_name]? task["command"]: '') + '</textarea>');
                     field_html.push(get_ace_script(task_type, "python"));
