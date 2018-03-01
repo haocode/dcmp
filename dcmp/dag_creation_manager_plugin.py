@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-__author__ = "yanghanbing"
+__author__ = "git"
 __version__ = "0.2.1"
 
 import logging
@@ -596,7 +596,7 @@ class DagCreationManager(BaseView):
         return res
 
 
-dag_creation_manager_view = DagCreationManager(category="DAGs", name="DAG Creation Manager")
+dag_creation_manager_view = DagCreationManager(category="DAG Creation Manager", name="DAG Creation Manager")
 
 dag_creation_manager_bp = Blueprint(
     "dag_creation_manager_bp",
