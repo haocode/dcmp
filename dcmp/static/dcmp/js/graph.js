@@ -494,7 +494,7 @@
         var change_widecreen = function(is_widescreen) {
             if(is_widescreen){
                 $(".container").addClass("widescreen");
-                $("#svg_container svg").attr("height", "100%");
+                $("#svg_container svg").attr("height", 800);
             }else{
                 $(".container").removeClass("widescreen");
                 $("#svg_container svg").attr("height", 400);
