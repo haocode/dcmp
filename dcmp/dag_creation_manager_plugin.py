@@ -168,7 +168,7 @@ class RequestArgsFilter(object):
         self.filters = filters
 
 
-class DagCreationManager(AdminIndexView):
+class DagCreationManager(BaseView):
     CONSTANT_KWS = {
         "TASK_TYPES": dcmp_settings.TASK_TYPES,
         "DAG_CREATION_MANAGER_LINE_INTERPOLATE": dcmp_settings.DAG_CREATION_MANAGER_LINE_INTERPOLATE,
@@ -596,7 +596,7 @@ class DagCreationManager(AdminIndexView):
         return res
 
 
-dag_creation_manager_view = DagCreationManager(name="DAG Creation Manager", url='/admin/Manager')
+dag_creation_manager_view = DagCreationManager(name="DAG Creation Manager", url='/Manager')
 
 dag_creation_manager_bp = Blueprint(
     "dag_creation_manager_bp",
