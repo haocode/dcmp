@@ -14,7 +14,7 @@ from airflow.plugins_manager import AirflowPlugin
 from airflow.www.app import csrf
 from airflow.utils.db import provide_session
 from flask import Blueprint, Markup, request, jsonify, flash
-from flask_admin import BaseView, expose
+from flask_admin import BaseView, expose, AdminIndexView
 from flask_admin.babel import gettext
 from pygments import highlight, lexers
 from pygments.formatters import HtmlFormatter
@@ -168,7 +168,7 @@ class RequestArgsFilter(object):
         self.filters = filters
 
 
-class DagCreationManager(BaseView):
+class DagCreationManager(AdminIndexView):
     CONSTANT_KWS = {
         "TASK_TYPES": dcmp_settings.TASK_TYPES,
         "DAG_CREATION_MANAGER_LINE_INTERPOLATE": dcmp_settings.DAG_CREATION_MANAGER_LINE_INTERPOLATE,
@@ -596,7 +596,7 @@ class DagCreationManager(BaseView):
         return res
 
 
-dag_creation_manager_view = DagCreationManager(category="DAG Creation Manager", name="DAG Creation Manager")
+dag_creation_manager_view = DagCreationManager(name="DAG Creation Manager")
 
 dag_creation_manager_bp = Blueprint(
     "dag_creation_manager_bp",
