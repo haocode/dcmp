@@ -197,7 +197,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
         return [
             '<div class="task-item" id="task_' + lastest_task_id + '" task_id="task_' + lastest_task_id + '" task_name="' + task.task_name + '">',
                 window.refresh_task_graph? '': '<hr>',
-                task_to_element_by_field(lastest_task_id, task, "task_name", "text", true, null, "A unique, meaningful name for the task"),
+                task_to_element_by_field(lastest_task_id, task, "task_name", "text", true, null, "一个独特的、有意义的任务名称 任务名跟最终生成的表名称一致"),
                 task_to_element_by_field(lastest_task_id, task, "queue_pool", "queue_pool", true, null, "Queue and pool for the task, choose the right worker to execute the task."),
                 task_to_element_by_field(lastest_task_id, task, "task_category", "task_category", false),
                 task_to_element_by_field(lastest_task_id, task, "task_type", "task_type", true, "Task"),

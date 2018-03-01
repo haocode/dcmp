@@ -167,7 +167,7 @@ _["%(task_name)s"] << _["%(upstream_name)s"]
     def clean_task_dict(self, task_dict, strict=False):
         task_name = task_dict.get("task_name")
         if not task_name:
-            raise ValueError("task name required")
+            raise ValueError("需要填写任务名称")
         task_name = get_string(task_name)
         if not self.check_job_name(task_name):
             raise ValueError("task %s name invalid" % task_name)
