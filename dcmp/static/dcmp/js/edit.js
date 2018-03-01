@@ -123,7 +123,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
                 }else if(task_type == "bash"){
                     field_html.push('<textarea ' + (readonly? ' readonly="readonly" ': '') + ' id="ace_' + task_id + '_' + task_type + '" class="form-control" rows="1" name="command">' + (task_type == task[field_name]? task["command"]: '') + '</textarea>');
                     field_html.push(render_help);
-                    field_html.push(get_ace_script(task_type, "sh", 1));
+                    field_html.push(get_ace_script(task_type, "sh"));
                 }else if(task_type == "spark_sql"){
                     field_html.push('<textarea ' + (readonly? ' readonly="readonly" ': '') + ' id="ace_' + task_id + '_' + task_type + '" class="form-control" rows="1" name="command">' + (task_type == task[field_name]? task["command"]: '') + '</textarea>');
                     field_html.push(render_help);
