@@ -596,7 +596,7 @@ class DagCreationManager(AdminIndexView):
         return res
 
 
-dag_creation_manager_view = DagCreationManager(name="DAG Creation Manager")
+dag_creation_manager_view = DagCreationManager(name="DAG Creation Manager", url='/admin/Manager')
 
 dag_creation_manager_bp = Blueprint(
     "dag_creation_manager_bp",
