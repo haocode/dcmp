@@ -497,7 +497,7 @@
                 $("#svg_container svg").attr("height", "100%");
             }else{
                 $(".container").removeClass("widescreen");
-                $("#svg_container svg").attr("height", "80%");
+                $("#svg_container svg").attr("height", 400);
             }
         };
         $("#wide-screen").change(function() {
