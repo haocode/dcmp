@@ -200,9 +200,9 @@ class DagCreationManager(BaseView):
     @provide_session
     def index(self, session=None):
         TASK_NAME = "任务名称"
-        COMMAND = "Command"
+        COMMAND = "命令"
         request_args_filter = RequestArgsFilter(DcmpDag, request.args, (
-            ("Category", {"operations": ["contains"]}),
+            ("类别", {"operations": ["contains"]}),
             (TASK_NAME, {"operations": ["contains"], "no_filters": True}),
             (COMMAND, {"operations": ["contains"], "no_filters": True}),
         ))
