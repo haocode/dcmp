@@ -84,12 +84,12 @@
                         <input class="form-control" id="depends_on_past" name="depends_on_past" type="checkbox" data-toggle="toggle" data-size="mini" {% if conf.depends_on_past %}checked="checked"{% endif %} {% if readonly %}disabled="disabled"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="concurrency" class="col-md-2 control-label">并行度 &nbsp;</label>
+                    <label for="concurrency" class="col-md-2 control-label">并行度 &nbsp;<span class="glyphicon glyphicon-info-sign" aria-hidden="true" title='允许同时运行的任务实例数量.'></span></label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="concurrency" name="concurrency" type="number" min="0" step="1" value="{{ conf.concurrency }}" {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
                 <div class="form-group">
-                    <label for="max_active_runs" class="col-md-2 control-label">Max Active Runs &nbsp;</label>
+                    <label for="max_active_runs" class="col-md-2 control-label">同时运行最大DAG数 &nbsp;</label>
                     <div class="col-md-10 form-field">
                         <input class="form-control" id="max_active_runs" name="max_active_runs" type="number" min="0" step="1" value="{{ conf.max_active_runs }}" {% if readonly %}readonly="readonly"{% endif %}></div>
                 </div>
