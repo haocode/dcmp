@@ -14,7 +14,10 @@ from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.hive_operator import HiveOperator
 from airflow.operators.HiveServer2_operator import HiveServer2Operator
+from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from airflow.operators.python_operator import PythonOperator, ShortCircuitOperator
+from airflow.contrib.operators.spark_sql_operator import SparkSqlOperator
+from airflow.operators.presto_operator import PrestoToOperator
 from airflow.operators.sensors import TimeSensor, TimeDeltaSensor
 from airflow.utils.email import send_email
 
