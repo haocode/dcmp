@@ -1,7 +1,7 @@
 {% extends "airflow/master.html" %}
 {% import 'admin/lib.html' as lib with context %}
 
-{% block title %}DAG配置目录{% endblock %}
+{% block title %}DAG目录{% endblock %}
 
 {% block head %}
     {{ super() }}
@@ -18,18 +18,18 @@
 
 {% block body %}
 
-<h2>DAG配置目录</h2>
+<h2>DAG目录</h2>
 <hr/>
 <ul class="nav nav-tabs actions-nav">
     <li class="active">
-        <a href="javascript:void(0)">List ({{ dcmp_dags_count }})</a>
+        <a href="javascript:void(0)">列表 ({{ dcmp_dags_count }})</a>
     </li>
     <li>
         <a href="graph" title="Create New Record">创建</a>
     </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-            Add Filter<b class="caret"></b>
+            增加过滤条件<b class="caret"></b>
         </a>
         <ul class="dropdown-menu field-filters">
             {% for k in filter_groups %}
