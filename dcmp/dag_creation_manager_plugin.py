@@ -18,12 +18,15 @@ from flask_admin import BaseView, expose, AdminIndexView
 from flask_admin.babel import gettext
 from pygments import highlight, lexers
 from pygments.formatters import HtmlFormatter
-
+from os import sys
 from dcmp import settings as dcmp_settings
 from dcmp.models import DcmpDag, DcmpDagConf
 from dcmp.dag_converter import dag_converter
 from dcmp.utils import LogStreamContext, search_conf_iter
 
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def login_required(func):
 # when airflow loads plugins, login is still None.
