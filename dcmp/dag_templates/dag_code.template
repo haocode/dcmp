@@ -12,7 +12,6 @@ from airflow import settings
 from airflow.models import Variable, TaskInstance, DagRun
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators.hive_operator import HiveOperator
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from airflow.operators.python_operator import PythonOperator, ShortCircuitOperator
 from airflow.contrib.operators.spark_sql_operator import SparkSqlOperator
@@ -63,6 +62,7 @@ default_params = get_default_params()
 default_args = {
     'owner': '%(owner)s',
     'start_date': %(start_date_code)s,
+    'end_date': %(end_date_code)s
     'email': %(email_code)s,
     'email_on_failure': %(email_on_failure)s,
     'email_on_retry': %(email_on_retry)s,
