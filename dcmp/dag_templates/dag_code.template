@@ -62,7 +62,6 @@ default_params = get_default_params()
 default_args = {
     'owner': '%(owner)s',
     'start_date': %(start_date_code)s,
-    'end_date': %(end_date_code)s,
     'email': %(email_code)s,
     'email_on_failure': %(email_on_failure)s,
     'email_on_retry': %(email_on_retry)s,
