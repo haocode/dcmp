@@ -388,7 +388,7 @@ return not skip
                     task["queue_code"] = "'%s'" % queue
                     task["pool_code"] = "'%s'" % pool
                 else:
-                    task["queue_code"] = "'%s'" % configuration.get("celery", "airflow_queue")
+                    task["queue_code"] = "'%s'" % configuration.get("celery", "default_queue")
                     task["pool_code"] = "None"
 
                 task["task_category"] = task.get("task_category", "default")
