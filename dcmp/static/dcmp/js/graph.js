@@ -107,11 +107,11 @@
         }
         var cur_name = job_id_to_name[cur_active_job_id];
         if(!cur_name){
-            alert("Current task name can not be blank.");
+            alert("当前任务名称不能为空.");
             return false;
         }
         if(count_task_name(cur_name) > 1){
-            alert("Current task name is not unique.");
+            alert("当前任务名称不唯一.");
             return false;
         }
         return true;
@@ -415,7 +415,7 @@
     var enable_change_upstreams = function() {
         var cur_active_job_id = get_cur_active_job_id();
         if(cur_active_job_id == "dag-container"){
-            alert("DAG can not change upstreams, select a task first.");
+            alert("DAG不能修改上绣, 先选定一个任务.");
             return false;
         }
         if(!check_cur_name()){
@@ -528,10 +528,10 @@
         });
         $("#remove_task").click(function() {
             if(cur_task_index == null){
-                alert("You can not remove DAG.");
+                alert("你不能删除 DAG.");
                 return false;
             }
-            if(confirm("Are you sure you want to delete this task?")){
+            if(confirm("确定删除当前任务?")){
                 disable_change_upstreams();
                 var cur_task = conf.tasks.splice(+cur_task_index, 1);
                 if(cur_task.length > 0){
@@ -561,7 +561,7 @@
         $("#container-form #tasks-container").on("change", "input[name='task_name']", function() {
             var cur_name = job_id_to_name[get_cur_active_job_id()];
             if(!$(this).val()){
-                alert("Current task name can not be blank.");
+                alert("当前任务名称不能为空.");
                 $(this).val(cur_name);
                 return false;
             }
