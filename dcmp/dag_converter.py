@@ -105,6 +105,15 @@ _["%%(task_name)s"].category = {
     %(processed_command)s
     '''.decode("utf-8"),
     """, }
+    PRESTO_TASK_CODE_TEMPLATE = BASE_TASK_CODE_TEMPLATE % {
+        "before_code": "",
+        # "operator_name": "HiveOperator",
+        "operator_name": "PrestoToOperator",
+        "operator_code": r"""
+        sql=r'''
+    %(processed_command)s
+    '''.decode("utf-8"),
+    """, }
 
     PYTHON_TASK_CODE_TEMPLATE = BASE_TASK_CODE_TEMPLATE % {
         "before_code": """
@@ -154,6 +163,7 @@ _["%(task_name)s"] << _["%(upstream_name)s"]
         "spark_sql": SPARK_SQL_TASK_CODE_TEMPLATE,
         "hql": HQL_TASK_CODE_TEMPLATE,
         "python": PYTHON_TASK_CODE_TEMPLATE,
+        "presto": PRESTO_TASK_CODE_TEMPLATE,
         "short_circuit": SHORT_CIRCUIT_TASK_CODE_TEMPLATE,
         "time_sensor": TIME_SENSOR_TASK_CODE_TEMPLATE,
         "timedelta_sensor": TIMEDELTA_SENSOR_TASK_CODE_TEMPLATE,

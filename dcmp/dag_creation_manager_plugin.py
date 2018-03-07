@@ -100,6 +100,7 @@ def command_render(task_type, command):
         'sql': lambda x: render(x, lexers.SqlLexer),
         'python': lambda x: render(x, lexers.PythonLexer),
         'short_circuit': lambda x: render(x, lexers.PythonLexer),
+        'presto': lambda x: render(x, lexers.SqlLexer),
         'time_sensor': lambda x: render(x, lexers.PythonLexer),
         'timedelta_sensor': lambda x: render(x, lexers.PythonLexer),
     }
